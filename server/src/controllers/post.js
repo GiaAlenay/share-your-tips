@@ -1,4 +1,4 @@
- const createUSer=async(req,res)=>{
+ const createPost=async(req,res)=>{
     try {
         res.status(201)
     } catch (error) {
@@ -6,7 +6,7 @@
     }
 }
 
- const deleteUSer=async(req,res)=>{
+ const deletePost=async(req,res)=>{
     try {
         res.status(201)
     } catch (error) {
@@ -14,7 +14,7 @@
     }
 }
 
- const getUser=async(req,res)=>{
+ const updatePost=async(req,res)=>{
     try {
         res.status(201)
     } catch (error) {
@@ -22,7 +22,7 @@
     }
 }
 
- const getUsers=async(req,res)=>{
+ const getPost=async(req,res)=>{
     try {
         res.status(201)
     } catch (error) {
@@ -30,23 +30,7 @@
     }
 }
 
- const updateUSer=async(req,res)=>{
-    try {
-        res.status(201)
-    } catch (error) {
-        res.status(401).json({error:error.message})
-    }
-}
-
- const getUsernames=async(req,res)=>{
-    try {
-        res.status(201)
-    } catch (error) {
-        res.status(401).json({error:error.message})
-    }
-}
-
- const getEmails=async(req,res)=>{
+ const getPosts=async(req,res)=>{
     try {
         res.status(201)
     } catch (error) {
@@ -55,5 +39,5 @@
 }
 
 module.exports={
-    getEmails,getUsernames,updateUSer,deleteUSer,createUSer,getUser,getUsers
+    getPosts,getPost,updatePost,deletePost,createPost
 }

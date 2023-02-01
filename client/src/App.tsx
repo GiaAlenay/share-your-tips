@@ -1,21 +1,27 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CreateAccount } from "./Pages/createAccount/createAccount";
+import { Register } from "./Pages/createAccount/createAccount";
 import { Home } from "./Pages/Home/Home";
 import { Landing } from "./Pages/Landing/Landing";
-import { initializeApp } from "firebase/app";
-import { config } from "./authConfig/config";
-
-initializeApp(config.firebaseConfig);
-
+import { Protected } from "./authentification/ProtectedRoutes/ProtectedRoutes";
+import { AuthProvider } from "./authentification/provider/authProvider";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/create" element={<CreateAccount />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/home"
+              element={
+                <Protected>
+                  <Home />
+                </Protected>
+              }
+            />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </div>
   );

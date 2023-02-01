@@ -34,7 +34,7 @@ const {Users } = require("../db");
         const {id}=req.params
         const findUser= await Users.findByPk(id)
         if (!findUser) {
-            res.status(401).json({error:'User not found.'})
+            throw new Error('User not found.')
         }
         else{
             res.status(201).json(findUser)
@@ -64,7 +64,7 @@ const {Users } = require("../db");
         const {id}=req.params
         const findUser= await Users.findByPk(id)
         if (!findUser) {
-            res.status(401).json({error:'User not found.'})
+            throw new Error('User not found.')
         }
         else{
             const confirmUpdates={}

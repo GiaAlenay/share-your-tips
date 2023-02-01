@@ -9,7 +9,8 @@ module.exports = (sequelize) => {
         allowNull: true,
       },
       media: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
+        allowNull: true,
       },
       contComents: {
         type: DataTypes.INTEGER,

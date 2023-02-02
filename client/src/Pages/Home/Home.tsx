@@ -1,7 +1,18 @@
 import { useAuth } from "../../authentification/provider/authProvider";
+import { useSelector } from "react-redux";
+import { ArticleState, IArticle } from "../../redux/interace";
+import { useEffect } from "react";
 
 export const Home = () => {
   const { logout, loading } = useAuth();
+  const articles: readonly IArticle[] = useSelector(
+    (state: ArticleState) => state.articles
+  );
+
+  useEffect(() => {
+    console.log(articles);
+  }, []);
+
   const handlelogout = async () => {
     try {
       await logout();

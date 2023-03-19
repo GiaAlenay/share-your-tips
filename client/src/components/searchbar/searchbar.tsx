@@ -1,3 +1,7 @@
 export const SearchBar = () => {
-  return <div>Nav</div>;
+  return (
+    <div>
+      <input type="text" />
+    </div>
+  );
 };

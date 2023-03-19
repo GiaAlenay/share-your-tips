@@ -5,13 +5,6 @@ import { useEffect } from "react";
 
 export const Home = () => {
   const { logout, loading } = useAuth();
-  const articles: readonly IArticle[] = useSelector(
-    (state: ArticleState) => state.articles
-  );
-
-  useEffect(() => {
-    console.log(articles);
-  }, []);
 
   const handlelogout = async () => {
     try {

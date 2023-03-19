@@ -1,8 +1,6 @@
 import { useAuth } from "../../authentification/provider/authProvider";
-import { useSelector } from "react-redux";
-import { ArticleState, IArticle } from "../../redux/interace";
-import { useEffect } from "react";
-
+import { NavBar } from "../../components/navbar/navbar";
+import { Footer } from "../../components/footer/footer";
 export const Home = () => {
   const { logout, loading } = useAuth();
 
@@ -18,8 +16,9 @@ export const Home = () => {
   }
   return (
     <div>
-      Home
+      <NavBar />
       <button onClick={handlelogout}>log out</button>
+      <Footer />
     </div>
   );
 };
